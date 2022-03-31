@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+management:
+  server:
+    port: 8091
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+      probes:
+        enabled: true
+
+app:
+  cache:
+    size: 100
+    expiry: 5
+  rest:
+    api:
+      prefix: /api
+
+openweather:
+  url: "http://api.openweathermap.org/data/2.5/weather?q=%s,ru&APPID=d3981d5b6804268109facebf1da1256a&units=metric"

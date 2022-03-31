@@ -1,13 +1,13 @@
-package ru.vlsolodilov.weatherbot;
+package ru.openweatherservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WeatherBotApplication {
+public class OpenweatherServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WeatherBotApplication.class, args);
+		SpringApplication.run(OpenweatherServiceApplication.class, args);
 	}
 
 }
