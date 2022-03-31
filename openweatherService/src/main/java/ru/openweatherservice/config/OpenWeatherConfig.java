@@ -5,6 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
 @ConfigurationProperties(prefix = "openweather")
-public class OpenweatherConfig {
+public class OpenWeatherConfig {
     String url;
 }

@@ -8,7 +8,7 @@ import lombok.Value;
 @Value
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
 @Builder
-public class OpenweatherInfo {
+public class OpenWeatherInfo {
     double temperature;
     double feelsLike;
     double windSpeed;

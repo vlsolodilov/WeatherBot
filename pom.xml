@@ -5,6 +5,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>openweatherService</module>
+    <module>weatherClient</module>
   </modules>
   <parent>
 		<groupId>org.springframework.boot</groupId>

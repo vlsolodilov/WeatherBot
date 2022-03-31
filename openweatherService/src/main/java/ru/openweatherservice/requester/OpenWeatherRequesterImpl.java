@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class OpenweatherRequesterImpl implements OpenweatherRequester {
+public class OpenWeatherRequesterImpl implements OpenWeatherRequester {
 
     @Override
-    public String getRatesAsXml(String url) {
+    public String getWeatherAsXml(String url) {
         try {
             log.info("request for url:{}", url);
-            var client = HttpClient.newHttpClient();
+            HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
                     .build();
@@ -27,7 +27,7 @@ public class OpenweatherRequesterImpl implements OpenweatherRequester {
             if (ex instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
-            log.error("openweather request error, url:{}", url, ex);
+            log.error("OpenWeather request error, url:{}", url, ex);
             throw new RequesterException(ex);
         }
     }

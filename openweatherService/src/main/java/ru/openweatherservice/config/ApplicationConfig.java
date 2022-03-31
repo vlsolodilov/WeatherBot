@@ -11,18 +11,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.openweatherservice.model.OpenweatherInfo;
+import ru.openweatherservice.model.OpenWeatherInfo;
 
 @Configuration
-@EnableConfigurationProperties(OpenweatherConfig.class)
+@EnableConfigurationProperties(OpenWeatherConfig.class)
 public class ApplicationConfig {
     private final CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder().build(true);
 
     @Bean
-    public Cache<String, OpenweatherInfo> weatherInfoCache(@Value("${app.cache.size}") int cacheSize,
+    public Cache<String, OpenWeatherInfo> weatherInfoCache(@Value("${app.cache.size}") int cacheSize,
         @Value("${app.cache.expiry}") int cacheExpiry) {
-        return cacheManager.createCache("CurrencyRate-Cache",
-                CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, OpenweatherInfo.class,
+        return cacheManager.createCache("OpenWeather-Cache",
+                CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class, OpenWeatherInfo.class,
                         ResourcePoolsBuilder.heap(cacheSize))
                     .withExpiry(ExpiryPolicyBuilder.timeToLiveExpiration(Duration.ofMinutes(cacheExpiry)))
                     .build());
