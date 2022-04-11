@@ -1,9 +1,9 @@
 server:
-  port: 8081
+  port: 8083
 
 management:
   server:
-    port: 8091
+    port: 8092
   endpoints:
     enabled-by-default: false
   endpoint:
@@ -20,5 +20,7 @@ app:
     api:
       prefix: /api
 
-openweather:
-  url: "http://api.openweathermap.org/data/2.5/weather?q=%s&APPID=${tokenOpenWeather}&units=metric"
+yandexweather:
+  headerKey: "X-Yandex-API-Key"
+  headerValue: "${tokenYandex}"
+  url: "https://api.weather.yandex.ru/v2/forecast?lat=%s&lon=%s"

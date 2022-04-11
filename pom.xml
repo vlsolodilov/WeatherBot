@@ -7,6 +7,7 @@
     <module>openweatherService</module>
     <module>weatherClient</module>
     <module>weatherTelegramBot</module>
+    <module>yandexWeatherService</module>
   </modules>
   <parent>
 		<groupId>org.springframework.boot</groupId>
